@@ -1,11 +1,9 @@
-// Classic ESP32-WROOM, four active-low IR modules and one active-low gate beam.
-// USB serial protocol at 115200. Beam must be crossed and clear to close.
 #include <ESP32Servo.h>
 #include <Preferences.h>
 #include <string.h>
 Servo arm;
 Preferences nv;
-const int pins[] = {18,19,21,22,27}; // slots 1-4, then gate beam
+const int pins[] = {18,19,21,22,27};
 const int servoPin = 23;
 bool raw[5], stable[5];
 unsigned long changed[5], lastReport, clearSince;
